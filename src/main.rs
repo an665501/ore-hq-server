@@ -363,7 +363,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                     ixs.push(ix_mine);
                     info!("Starting mine submission attempts with difficulty {}.", difficulty);
                         
-                    for i in 0..3 {
+                    for i in 0..10 {
                         if let Ok((hash, _slot)) = rpc_client.get_latest_blockhash_with_commitment(rpc_client.commitment()).await {
                             let mut tx = Transaction::new_with_payer(&ixs, Some(&signer.pubkey()));
 
