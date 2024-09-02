@@ -444,11 +444,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                                     mut_epoch_hashes.best_hash.difficulty = 0;
                                     mut_epoch_hashes.submissions = HashMap::new();
                                 }
-                                // Open submission window
-                                info!("openning submission window.");
-                                let mut writer = app_submission_window.write().await;
-                                writer.closed = false;
-                                drop(writer);
+                                
                             }
                             tokio::time::sleep(Duration::from_millis(500)).await;
                         } else {
